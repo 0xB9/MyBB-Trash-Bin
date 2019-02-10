@@ -84,7 +84,7 @@ if ($mybb->get_input('action') == 'posts') {
 
             $thread = get_thread($post['tid']);
             if ($thread) {
-                $table->construct_cell("<a href='../showthread.php?tid=" . $thread['tid'] . "'>" . $thread['subject'] . "</a>");
+                $table->construct_cell("<a href='../showthread.php?tid=" . $thread['tid'] . "'>" . htmlspecialchars_uni($thread['subject']) . "</a>");
             } else {
                 $table->construct_cell("- REMOVED THREAD -");
             }
@@ -183,7 +183,7 @@ if ($mybb->get_input('action') == 'posts') {
                         $table->output("");
                         $num++;
                     }
-                    
+
                     echo draw_admin_pagination($pagenr, 10, $total, $trashbin->build_url(array("action"=>"viewthread","tid"=>$thread['tid'])));
                 }
             } else {
@@ -303,6 +303,7 @@ if ($mybb->get_input('action') == 'posts') {
             $view_link = "index.php?module=tools-trashbin&amp;action=viewthread&amp;tid={$thread['tid']}";
 
             $table->construct_cell($thread['subject']);
+            $thread['subject'] = htmlspecialchars_uni($thread['subject']);
 
             //poster
             $poster = get_user($thread['uid']);
