@@ -303,8 +303,8 @@ if ($mybb->get_input('action') == 'posts') {
             $restore_link = "index.php?module=tools-trashbin&amp;action=threadrestore&amp;tid={$thread['tid']}";
             $view_link = "index.php?module=tools-trashbin&amp;action=viewthread&amp;tid={$thread['tid']}";
 
-            $table->construct_cell($thread['subject']);
             $thread['subject'] = htmlspecialchars_uni($thread['subject']);
+            $table->construct_cell($thread['subject']);
 
             //poster
             $poster = get_user($thread['uid']);
