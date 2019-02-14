@@ -396,7 +396,7 @@ function trashbin_parse_post($post,$num)
 
     $head = "<div class='post_author'>
             <div class='author_information' >
-            	<strong><span class='largetext' >".build_profile_link($poster['username'],$poster['uid'])."</span></strong>
+            	<strong><span class='largetext' >".build_profile_link(htmlspecialchars_uni($poster['username'],$poster['uid']))."</span></strong>
             </div>
         </div>";
 
