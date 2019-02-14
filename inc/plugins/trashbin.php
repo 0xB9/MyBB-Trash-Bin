@@ -31,7 +31,7 @@ function trashbin_info()
         'authorsite' => 'http://lenders-it.nl',
         'version' => '1.1.4',
         'compatibility' => '18*',
-        'codename' => 'trashbin');
+        'codename' => 'trashbin_new');
 }
 
 function trashbin_install()
