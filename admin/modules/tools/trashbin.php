@@ -89,8 +89,8 @@ if ($mybb->get_input('action') == 'posts') {
                 $table->construct_cell("- REMOVED THREAD -");
             }
 
-            $table->construct_cell($post['subject']);
             $post['subject'] = htmlspecialchars_uni($post['subject']);
+            $table->construct_cell($post['subject']);
 
             //poster
             $poster = get_user($post['uid']);
